@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en-AU" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cullery: cull your SD card into Apple Photos</title>
+  <meta name="description" content="Look at every shot on your camera's SD card full screen on your iPhone, keep the good ones and import only those into Apple Photos. Every copy is checked. Your card is never changed.">
+  <meta property="og:title" content="Cullery">
+  <meta property="og:description" content="412 shots on the card. 38 worth keeping. Cull your SD card on iPhone and import only your picks into Apple Photos.">
+  <meta property="og:image" content="https://mgit-26c0d3.github.io/cullery-site/images/og.jpg">
+  <meta property="og:url" content="https://mgit-26c0d3.github.io/cullery-site/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#E6E8EB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2A2C30" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="images/icon-64.png">
+  <link rel="apple-touch-icon" href="images/icon-180.png">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.remove("no-js")</script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="images/icon-180.png" alt="">Cullery</a>
+    <nav class="site-nav" aria-label="Site">
+      <a class="wide" href="#how">How it works</a>
+      <a class="wide" href="#checks">Checks</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero: the example card, 412 shots culled to 38 -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Cullery for iPhone</p>
+      <h1>412 shots on the card. <span class="quiet">38 worth keeping.</span></h1>
+      <p class="lede">Cullery is the step between your camera and your Photos library. Look at every frame properly on your iPhone, keep the good ones, and leave the rest on the card exactly as it was.</p>
+      <!-- scripts/site-fill.sh puts the App Store link here. Swap this button for Apple's
+           "Download on the App Store" badge: https://developer.apple.com/app-store/marketing/guidelines/ -->
+      <a class="button" href="[[APP STORE URL]]">Download on the App Store</a>
+      <p class="note">iOS 26 or later, and any SD card reader that works with your iPhone.</p>
+    </div>
+
+    <figure class="sd" id="sd" aria-label="An SD card of 412 shots. 38 of them are picks; the rest are dimmed and stay on the card.">
+      <span class="sd-lock" aria-hidden="true"></span>
+      <div class="sd-body">
+        <div class="sd-head"><strong>SD Card</strong><span>412 shots · 18.4 GB</span></div>
+        <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+        <div class="sd-foot">
+          <span class="sd-count"><b id="pick-count">38</b>picks</span>
+          <span class="sd-detail">31 photos, 7 videos · 2.1 GB</span>
+          <button class="replay" id="replay" type="button" hidden>Cull again</button>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- How it goes: six steps, one phone -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-intro reveal">
+      <p class="eyebrow">How it goes</p>
+      <h2>From card to album in one sitting</h2>
+      <p>A Saturday at the beach and a Sunday on the coast road. This is how 412 shots become one album of the good ones.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step-list">
+        <article class="step" data-step="0">
+          <div class="step-num">01</div>
+          <h3>Plug in the card</h3>
+          <p>Push a card reader into your iPhone. Cullery sees the card straight away and opens it with one tap. Once you have let it in, that card opens by itself every time.</p>
+          <div class="step-detail" aria-hidden="true">
+            <div class="d-card d-row"><span class="d-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M8 3h9a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6.5Z"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M10 6v3M12.5 6v3M15 6v3"/></svg></span><span class="d-text"><b>SD Card</b><small>412 shots · 18.4 GB · Read-only</small></span><span class="d-pill">Open</span></div>
+            <p class="d-note">Remembers up to 20 cards, each opening by itself next time.</p>
+          </div>
+          <div class="step-shot"><div class="phone"><div class="screen"><img src="images/home.jpg" width="630" height="1368" alt="Cullery's home screen showing the connected SD card and the last import." loading="lazy"></div></div></div>
+        </article>
+        <article class="step" data-step="1">
+          <div class="step-num">02</div>
+          <h3>See the whole shoot</h3>
+          <p>Every shot, sorted by the day you took it. A RAW and its JPEG show as one tile. Pinch from two across to six, or filter down to picks, unmarked or skipped.</p>
+          <div class="step-detail" aria-hidden="true">
+            <div class="d-seg"><span class="on">All</span><span>Picks</span><span>Unmarked</span><span>Skipped</span></div>
+            <div class="d-days">
+              <div class="d-card d-day"><b>Saturday 3 October</b><small>148 shots</small></div>
+              <div class="d-card d-day"><b>Sunday 4 October</b><small>264 shots</small></div>
+            </div>
+            <div class="d-across"><small>Pinch</small><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><small>across</small></div>
+          </div>
+          <div class="step-shot"><div class="phone"><div class="screen"><img src="images/grid.jpg" width="630" height="1368" alt="The card's grid: a day heading and a wall of shots from the coast." loading="lazy"></div></div></div>
+        </article>
+        <article class="step" data-step="2">
+          <div class="step-num">03</div>
+          <h3>Look properly</h3>
+          <p>Tap a shot and it fills the screen on true black, with shutter, aperture, ISO and focal length underneath. Double tap for 100% and check the eyes are sharp before you decide.</p>
+          <div class="step-detail d-look" aria-hidden="true">
+            <div class="d-loupe"><img src="images/zoom-03.jpg" width="720" height="480" alt="" loading="lazy"><span class="d-badge">100%</span></div>
+            <div class="d-exif"><span><small>Shutter</small>1/500 s</span><span><small>Aperture</small>ƒ/2</span><span><small>ISO</small>400</span><span><small>Focal length</small>16 mm</span></div>
+          </div>
+          <div class="step-shot"><div class="phone"><div class="screen"><img src="images/review.jpg" width="630" height="1368" alt="A surfer at sunset shown full screen, with Skip, stars and Pick below." loading="lazy"></div></div></div>
+        </article>
+        <article class="step" data-step="3">
+          <div class="step-num">04</div>
+          <h3>Decide quickly</h3>
+          <p>Swipe up to pick, down to skip. Shot a burst? Tap Select and drag across it to mark the whole run in one go.</p>
+          <div class="step-detail" aria-hidden="true">
+            <div class="d-marks"><span class="d-chip pick">↑ Pick</span><span class="d-chip">↓ Skip</span><span class="d-chip">★ 0 to 5</span></div>
+            <div class="d-burst"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <p class="d-note">Select, then one drag marks a whole burst.</p>
+          </div>
+          <div class="step-shot"><div class="phone"><div class="screen"><img src="images/select.jpg" width="630" height="1368" alt="Select mode with six shots chosen by one drag." loading="lazy"></div></div></div>
+        </article>
+        <article class="step" data-step="4">
+          <div class="step-num">05</div>
+          <h3>Import the keepers</h3>
+          <p>Your picks go into Photos in a new album named after the days you shot, with file names you choose. Switch apps or lock your phone: the import keeps going and shows its progress on the Lock Screen.</p>
+          <div class="step-detail" aria-hidden="true">
+            <div class="d-card d-import">
+              <div class="d-line"><span>Import</span><b>38 picks</b></div>
+              <div class="d-line"><span>Album</span><b>3 to 4 October 2026</b></div>
+              <div class="d-line"><span>File names</span><b class="d-mono">2026-10-03_0001.ARW</b></div>
+              <div class="d-progress"><i></i></div>
+              <div class="d-line d-small"><span>14 of 38 · 780 MB of 2.1 GB</span><span>About 2 min left</span></div>
+            </div>
+          </div>
+          <div class="step-shot"><div class="phone"><div class="screen"><img src="images/import-sheet.jpg" width="630" height="1368" alt="The Import sheet: 38 picks, keep both RAW and JPEG, a new album, verify copies on." loading="lazy"></div></div></div>
+        </article>
+        <article class="step" data-step="5">
+          <div class="step-num">06</div>
+          <h3>Know it is safe</h3>
+          <p>When it finishes you see how many copies were verified. Recent imports keeps that tick for every card, so you know when it is time to format the card in your camera.</p>
+          <div class="step-detail" aria-hidden="true">
+            <p class="d-head">Recent imports</p>
+            <div class="d-card d-row"><span class="d-thumb"></span><span class="d-text"><b>3 to 4 October 2026</b><small>38 shots · <span class="d-tick">✓</span> All verified</small></span><span class="d-chev">›</span></div>
+            <p class="d-note">Check here before you format a card.</p>
+          </div>
+          <div class="step-shot"><div class="phone"><div class="screen"><img src="images/import-done.jpg" width="630" height="1368" alt="Import finished: 38 shots imported, 38 of 38 verified." loading="lazy"></div></div></div>
+        </article>
+      </div>
+
+      <div class="phone-rail" aria-hidden="true">
+        <div class="phone-sticky">
+          <div class="phone"><div class="screen screens" id="screens">
+            <img class="active" src="images/home.jpg" width="630" height="1368" alt="">
+            <img src="images/grid.jpg" width="630" height="1368" alt="">
+            <img src="images/review.jpg" width="630" height="1368" alt="">
+            <img src="images/select.jpg" width="630" height="1368" alt="">
+            <img src="images/import-sheet.jpg" width="630" height="1368" alt="">
+            <img src="images/import-done.jpg" width="630" height="1368" alt="">
+          </div></div>
+          <div class="rail-dots" id="dots"><span class="active"></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marks -->
+<section class="marks">
+  <div class="wrap">
+    <div class="deck reveal" aria-hidden="true">
+      <div class="shot"><img src="images/photo-03.jpg" alt="" width="720" height="480"></div>
+      <div class="shot"><img src="images/photo-16.jpg" alt="" width="720" height="480"></div>
+      <div class="shot"><img src="images/photo-11.jpg" alt="" width="720" height="480"></div>
+      <span class="chip pick">✓ Picked</span>
+      <span class="chip skip">Skipped</span>
+      <span class="chip star">★★★☆☆</span>
+      <span class="gesture"></span>
+      <div class="bar">Swipe up to pick · down to skip</div>
+    </div>
+    <div>
+      <div class="reveal">
+        <p class="eyebrow">Marks</p>
+        <h2>Up is yes. Down is no.</h2>
+        <p class="intro-line">Three marks, kept in the app and never written to the card.</p>
+      </div>
+      <ul class="mark-list">
+        <li class="reveal"><b><span class="dot pick"></span>Pick</b><span>Goes to Photos on the next import. Shown with a tick.</span></li>
+        <li class="reveal d1"><b><span class="dot skip"></span>Skip</b><span>Dimmed and left out of the import. It stays on the card, and you can change your mind.</span></li>
+        <li class="reveal d2"><b><span class="dot star"></span>Stars</b><span>Zero to five, separate from pick and skip. On iOS 27 they go into Photos as ratings.</span></li>
+      </ul>
+      <p class="aside reveal">Stop halfway and carry on tomorrow: your marks are remembered against the card, and shots already in Photos are left out next time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Checks -->
+<section class="checks" id="checks">
+  <div class="wrap">
+    <div>
+      <div class="section-intro reveal">
+        <p class="eyebrow">Verify copies</p>
+        <h2>Every file, read three times</h2>
+        <p>As a file comes off the card, Cullery works out its SHA-256 fingerprint: a 64-character code that changes completely if even one byte is different. Then it reads the copy back, and reads the card once more. Only when all three agree does the shot go into Photos.</p>
+      </div>
+      <p class="fine reveal">If any of them differ, that shot stays out of Photos and Cullery tells you which one, so a tired card or a loose reader can't leave you with a damaged copy. Verify copies is on unless you turn it off.</p>
+    </div>
+    <div class="hashes reveal" id="hashes">
+      <div class="hash-file"><span>Shot 14 of 38</span><b>DSC04127.ARW</b></div>
+      <div class="hash-row"><div class="what"><i>1</i>Read from the card</div><code data-hash="9f2c41e07ab35d8c16e4f09b27a3c5d810fe6b49c27d3a85e1b04f6c92d7a318"></code></div>
+      <div class="hash-row"><div class="what"><i>2</i>Read back from the copy on your iPhone</div><code data-hash="9f2c41e07ab35d8c16e4f09b27a3c5d810fe6b49c27d3a85e1b04f6c92d7a318"></code></div>
+      <div class="hash-row"><div class="what"><i>3</i>Read from the card again</div><code data-hash="9f2c41e07ab35d8c16e4f09b27a3c5d810fe6b49c27d3a85e1b04f6c92d7a318"></code></div>
+      <div class="hash-result" id="hash-result">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#3F78A8"/><path d="m7 12.5 3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All three match. Into Photos it goes.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Read-only -->
+<section class="zero">
+  <div class="wrap narrow">
+    <p class="big reveal" aria-hidden="true">0</p>
+    <h2 class="reveal">files changed on your card. Ever.</h2>
+    <p class="reveal d1">Cullery only reads. Your picks, skips and stars live in the app, so the card comes out exactly as it went in. Formatting stays a job for your camera, when you decide it's time.</p>
+    <ul class="nevers reveal d2">
+      <li>Nothing deleted</li>
+      <li>Nothing renamed</li>
+      <li>Nothing moved</li>
+      <li>Nothing written</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Formats -->
+<section class="formats" aria-labelledby="formats-title">
+  <div class="wrap narrow section-intro reveal">
+    <p class="eyebrow">Formats</p>
+    <h2 id="formats-title">Reads what your camera writes</h2>
+  </div>
+  <p class="visually-hidden">RAW files iOS can read, including Sony ARW, Canon CR3 and CR2, Nikon NEF, Fujifilm RAF, OM System and Olympus ORF, Panasonic RW2, DNG, Pentax PEF, Samsung SRW, Hasselblad 3FR and Phase One IIQ, plus JPEG, HEIF, and MP4 and MOV video.</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>ARW</span><span>CR3</span><span>NEF</span><span>RAF</span><span>ORF</span><span>RW2</span><span>DNG</span><span>CR2</span><span>PEF</span><span>JPEG</span><span>HEIF</span>
+      <span aria-hidden="true">ARW</span><span aria-hidden="true">CR3</span><span aria-hidden="true">NEF</span><span aria-hidden="true">RAF</span><span aria-hidden="true">ORF</span><span aria-hidden="true">RW2</span><span aria-hidden="true">DNG</span><span aria-hidden="true">CR2</span><span aria-hidden="true">PEF</span><span aria-hidden="true">JPEG</span><span aria-hidden="true">HEIF</span>
+    </div>
+  </div>
+  <div class="marquee reverse" aria-hidden="true">
+    <div class="track">
+      <span class="video">MP4</span><span>SRW</span><span>3FR</span><span class="video">MOV</span><span>IIQ</span><span>NRW</span><span>X3F</span><span class="video">M4V</span><span>RWL</span><span>SR2</span><span>FFF</span>
+      <span class="video" aria-hidden="true">MP4</span><span aria-hidden="true">SRW</span><span aria-hidden="true">3FR</span><span class="video" aria-hidden="true">MOV</span><span aria-hidden="true">IIQ</span><span aria-hidden="true">NRW</span><span aria-hidden="true">X3F</span><span class="video" aria-hidden="true">M4V</span><span aria-hidden="true">RWL</span><span aria-hidden="true">SR2</span><span aria-hidden="true">FFF</span>
+    </div>
+  </div>
+  <p class="fine wrap reveal">A RAW and JPEG pair counts as one shot: import both, RAW only or JPEG only. Files Photos can't take, like AVCHD or BRAW, are listed on screen so you don't format them away by accident.</p>
+</section>
+
+<!-- Light and dark -->
+<section class="appearance">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Appearance</p>
+      <h2>Soft by day, dark by night</h2>
+      <p>Cullery follows your iPhone's appearance. Its controls are raised from one soft surface, and full-screen review always sits on true black, so colour is judged against a neutral surround.</p>
+    </div>
+    <div class="reveal d1">
+      <div class="phone compare" id="compare">
+        <div class="screen">
+          <img src="images/grid.jpg" width="630" height="1368" alt="The grid in light appearance." loading="lazy">
+          <img class="dark" src="images/grid-dark.jpg" width="630" height="1368" alt="The grid in dark appearance." loading="lazy">
+          <span class="divider"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare light and dark appearance">
+        </div>
+      </div>
+      <p class="compare-label">Drag to compare light and dark</p>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy -->
+<section class="privacy-strip">
+  <div class="wrap">
+    <div class="panel reveal">
+      <div>
+        <h2>Nothing leaves your iPhone</h2>
+        <p>Your shots go from the card to your Photos library and nowhere else. Nobody, including us, can see them. <a href="privacy.html">Read the privacy policy</a>.</p>
+      </div>
+      <ul>
+        <li>No account</li>
+        <li>No ads</li>
+        <li>No tracking</li>
+        <li>Never goes online</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap narrow reveal">
+    <h2>Leave the blurry ones on the card.</h2>
+    <p>Made in Sydney by Michael Lameri, a video editor and iOS developer who wanted a better way to cull a shoot on the go.</p>
+    <a class="button" href="[[APP STORE URL]]">Download on the App Store</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Michael Lameri</span>
+    <nav aria-label="Footer">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="credits.html">Photo credits</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
